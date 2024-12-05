@@ -19,8 +19,9 @@
     <div class="login-box">
         <div class="login-logo">
             <a href=""><img src="{{ asset('assetsBackend') }}/images/logo.jpg"
-                    width="150px"></a>
+                    width="200px"></a>
         </div>
+
 
         <div class="card">
             <div class="card-body login-card-body">
