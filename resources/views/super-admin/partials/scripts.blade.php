@@ -8,6 +8,7 @@
 <!-- AdminLTE App -->
 <script src="{{ asset('assetsBackend') }}/dist/js/adminlte.js"></script>
 
+
 <!-- PAGE PLUGINS -->
 <!-- jQuery Mapael -->
 <script src="{{ asset('assetsBackend') }}/plugins/jquery-mousewheel/jquery.mousewheel.js"></script>
