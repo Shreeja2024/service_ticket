@@ -18,7 +18,7 @@ class AdminAuthMiddleware
     {
         if(Auth::check()) {
             $user = Auth::user(); 
-            if($user->hasRole('SUPER-ADMIN') || $user->hasRole('OFFICE-MANAGERS')) {
+            if($user->hasRole('SUPER-ADMIN') || $user->hasRole('OFFICE-MANAGER')) {
                 return $next($request);
             }else {
                 return redirect()->route('super-admin.login')->withError('Please login with valid credentials')->withInput();

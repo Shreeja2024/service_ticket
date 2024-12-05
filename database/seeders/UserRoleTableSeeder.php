@@ -13,7 +13,7 @@ class UserRoleTableSeeder extends Seeder
      */
     public function run(): void
     {
-        $UserTypes = ['SUPER-ADMIN', 'OFFICE-MANAGERS','TECHNICIAN','CUSTOMER'];
+        $UserTypes = ['SUPER-ADMIN', 'OFFICE-MANAGER','TECHNICIAN','CUSTOMER'];
         foreach ($UserTypes as $UserType) {
             Role::create(['name' => $UserType]);
         }

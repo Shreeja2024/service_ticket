@@ -11,7 +11,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0">Dashboard</h1>
+            @if(Auth::user()->hasRole('SUPER-ADMIN'))
+            <h1 class="m-0">Super Admin Dashboard</h1>
+            @else
+            <h1 class="m-0">Office Manager Dashboard</h1> 
+            @endif
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">

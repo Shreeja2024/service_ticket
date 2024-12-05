@@ -41,21 +41,18 @@
 </script>
 
 
+
 <script>
     $(document).ready(function() {
-        // Add More functionality
-        $('#add_more').on('click', function() {
-            const newItem = `
-            <div class="item-row d-flex align-items-center">
-                <input type="text" name="item[]" class="form-control" placeholder="Enter item">
-                <button type="button" class="btn btn-danger remove-item ml-2">Remove</button>
-            </div></br>`;
-            $('#items-container').append(newItem);
+        $("#styled-checkbox-1").click(function() {
+            $('input:checkbox').prop('checked', this.checked);
         });
 
-        // Remove Item functionality
-        $(document).on('click', '.remove-item', function() {
-            $(this).closest('.item-row').remove();
+        // Handle individual checkboxes
+        $('input:checkbox').not("#checkAll").click(function() {
+            if (!this.checked) {
+                $("#checkAll").prop('checked', false);
+            }
         });
     });
 </script>

@@ -18,7 +18,7 @@
           </a>
         </li>
         
-        @role('SUPER-ADMIN')
+        @if(Gate::check('Manage Manager'))
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
@@ -31,26 +31,36 @@
             <li class="nav-item">
               <a href="pages/charts/chartjs.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
-                <p>Manage Managers</p>
+                <p>Manage</p>
               </a>
             </li>
-            <li class="nav-item">
+            {{-- <li class="nav-item">
               <a href="pages/charts/flot.html" class="nav-link">
                 <i class="far fa-circle nav-icon"></i>
                 <p>Manage Orders</p>
               </a>
-            </li>
+            </li> --}}
             
           </ul>
         </li>
+        @endif
       
-
+        @if(Gate::check('Manage Customer'))
         <li class="nav-item">
           <a href="" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
-            <p>Customer Management</p>
+            <p>Customer <i class="right fas fa-angle-left"></i></p>
           </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="pages/charts/chartjs.html" class="nav-link">
+                <i class="far fa-circle nav-icon"></i>
+                <p>Manage</p>
+              </a>
+            </li>
+          </ul>
         </li>
+        @endif
 
         {{-- <li class="nav-item">
           <a href="" class="nav-link">
@@ -59,12 +69,17 @@
           </a>
         </li> --}}
 
+        @if(Gate::check('Manage Role'))
+
         <li class="nav-item">
-          <a href="" class="nav-link">
+          <a href="{{ route('manage-permission.index')}}" class="nav-link">
             <i class="nav-icon fas fa-pen"></i>
             <p>Role Management</p>
           </a>
         </li>
+        @endif
+
+        @if(Gate::check('Manage Report'))
 
         <li class="nav-item">
           <a href="" class="nav-link">
@@ -72,13 +87,25 @@
             <p>Reports</p>
           </a>
         </li>
+        @endif
 
+        @if(Gate::check('Manage Content'))
         <li class="nav-item">
           <a href="" class="nav-link">
             <i class="nav-icon fas fa-tasks"></i>
             <p>Content Management</p>
           </a>
         </li>
+        @endif
+
+        @if(Gate::check('Manage Technician'))
+        <li class="nav-item">
+          <a href="" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>Manage Technicians</p>
+          </a>
+        </li>
+        @endif
 
         <li class="nav-item">
           <a href="{{ route('super-admin.logout') }}" class="nav-link">
@@ -86,31 +113,6 @@
             <p>Log out</p>
           </a>
         </li>
-
-        @endrole
-
-        @role('OFFICE-MANAGERS')
-        <li class="nav-item">
-          <a href="" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
-            <p>Manage Technicians</p>
-          </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="{{ route('admin.logout') }}" class="nav-link">
-            <i class="nav-icon fas fa-sign-out-alt"></i>
-            <p>Log out</p>
-          </a>
-        </li>
-
-        @endrole
-
-       
-
-        
-
-       
 
       </ul>
     </nav>

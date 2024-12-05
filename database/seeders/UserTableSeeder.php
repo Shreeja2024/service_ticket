@@ -27,7 +27,7 @@ class UserTableSeeder extends Seeder
             'email' => "manager@yopmail.com",
             'password' => "12345678"
         ]);
-        $managerUser->assignRole('OFFICE-MANAGERS');
+        $managerUser->assignRole('OFFICE-MANAGER');
 
         // dummy technicians details
         $technicianUser = User::create([

@@ -48,7 +48,7 @@ class AuthController extends Controller
         if (Auth::attempt($credentials )) {  
 
             $user = Auth::user(); 
-            if ($user->hasRole('OFFICE-MANAGERS')) {
+            if ($user->hasRole('OFFICE-MANAGER')) {
                
                 return redirect()->route('super-admin.dashboard');
             }else {

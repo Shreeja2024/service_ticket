@@ -3,7 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\{
     AuthController,
-    DashboardController
+    DashboardController,
+    ManagePermissionController
 };
 
 // Route::get('/', function () {
@@ -27,4 +28,8 @@ Route::middleware('admin')->group(function () {
     Route::get('dashboard', [DashboardController::class, 'adminDashboard'])->name('super-admin.dashboard');
     Route::get('superAdminlogout', [AuthController::class, 'superAdminLogout'])->name('super-admin.logout');
     Route::get('adminlogout', [AuthController::class, 'adminLogout'])->name('admin.logout');
+
+    Route::resource('manage-permission', ManagePermissionController::class);
 });
+
+
