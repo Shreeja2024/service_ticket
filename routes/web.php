@@ -4,7 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Backend\{
     AuthController,
     DashboardController,
-    ManagePermissionController
+    ManagePermissionController,
+    OfficeManagerController
 };
 
 // Route::get('/', function () {
@@ -30,6 +31,7 @@ Route::middleware('admin')->group(function () {
     Route::get('adminlogout', [AuthController::class, 'adminLogout'])->name('admin.logout');
 
     Route::resource('manage-permission', ManagePermissionController::class);
+    Route::resource('office-manager',OfficeManagerController::class);
 });
 
 
